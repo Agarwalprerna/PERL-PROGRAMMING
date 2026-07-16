@@ -1,0 +1,36 @@
+//STEP 1  OPEN Ubuntu Linux -> GO to the Project Directory
+
+
+prerna@LAPTOP-929QFRHD:~$ cd /mnt/d/
+prerna@LAPTOP-929QFRHD:/mnt/d$ ls             //to find VLSI Project
+prerna@LAPTOP-929QFRHD:/mnt/d$  cd Design\ Verification/
+prerna@LAPTOP-929QFRHD:/mnt/d/Design Verification$ cd AHB2
+
+//STEP 2 WRITE PERL SCRIPT in VIM EDITOR
+prerna@LAPTOP-929QFRHD:/mnt/d/Design Verification/AHB2$ vim run.pl
+
+//STEP 3 PERL SCRIPT 
+
+use strict;
+use warnings;
+
+my $compile = "vlog ahb_design.sv > compile.log 2>&1";
+
+print"$compile\n";
+
+my $status = system($compile);
+
+print"Log: $status\n";
+
+//STEP 4 SAVE THE SCRIPT AND RUN PERL SCRIPT
+
+prerna@LAPTOP-929QFRHD:/mnt/d/Design Verification/AHB2$ perl run.pl
+
+//OUTPUT
+vlog ahb_design.sv > compile.log 2>&1
+Log: 32512
+
+//ALSO you can verify that compile.log txtfile has been generated in PROJECT DIRECTORY
+
+
+~
