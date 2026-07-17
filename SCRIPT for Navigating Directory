@@ -1,0 +1,23 @@
+use strict;
+use warnings;
+use File::Find;
+
+find(
+    sub {
+        print "$File::Find::name\n" if -f;
+    },
+    "Design Verification/"
+);
+
+//output
+Design Verification/work
+
+
+
+
+//----------------------------------------------------------------------understanding the code---------------------------------------------------------------------
+1.load the built in module File::FInd for traversal in directory
+2. find(sub { ... }, "Design Verification/"); 
+    first argument: a subroutine that runs for every file and print only if directory found.
+    Second argument: the starting directory.
+3. -d is a Perl file test operator. Test if the file is a directory
