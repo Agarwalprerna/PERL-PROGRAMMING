@@ -1,0 +1,10 @@
+use strict;
+use warnings;
+
+my $simulate = "vsim -c work.top -do \"run -all;quit\" > sim.log 2>&1";
+
+my $status = system($simulate);
+
+print"Log: $status\n";
+
+~
