@@ -1,0 +1,109 @@
+use design;
+
+$num = 7;
+
+if($num >4){
+   print"$number is greator than 4\n";
+   }
+   else{
+   print"number is not greator than 4\n";
+   }
+   
+
+#......................... Conditional operator.................
+$name = 'rohan';
+$age = 15;
+
+$status = ($age >30) ? "not an adult" : "teenager";
+print"$name is $status\n";
+
+#...............................looping ...................................
+
+@fruits = ('apple' , 'banana' , "orange" , "kiwi" , "guava");
+
+for ($i=0 ; $i< @fruits; $i++){
+   print" $fruits[$i]\n";
+   }
+   
+   
+   #foreach statement
+    foreach $fruits ( @fruits){
+           print"foreach loop : $fruits\n";
+           }
+   
+   #while loop
+   $i =0;
+   while( $i < @fruits){
+      print"while loop : $fruits[$i]\n";
+      $i++;
+      }
+      
+   #do while
+   $i =0;
+   do{
+     print" do while : $fruits[$i]\n";
+     $i++;
+     }while( $i < @fruits);
+     
+   #opposite of while
+   $j =0;
+   until ( $j >= @fruits){
+      print"until loop $fruits[$j]\n";
+      $j++;
+      }
+     
+     
+ #....................... infinite loop.........................
+ 
+ #
+ #for( ; ;){
+ #print"all is well";
+ #}
+ #cut
+ 
+ 
+ #................................control statement..........
+ 
+ my @array = (3 , 5,6,-2, -5, 8.9);
+ $i =0;
+ 
+ LOOP :  while ( $i< @array){
+           
+           $num = $array[$i];
+           
+           #goto : jump to label 
+           if( $num == 8.9){
+              goto SKIP;
+              }
+              
+            #last : exit the loop
+            if ( $num > 7){
+               print" $num is greator than 7 , so exit the                      loop\n";
+               last;
+               }
+               
+            #Next - skip and move to next iteration
+            if( $num <0 ) {
+                print"skipping the negative number \n";
+                $i ++;
+                next;
+                }
+                
+           #redo - repeat the iteration
+            if ( $num == 6){
+               print" repeating $num\n";
+               @array[$i] = 11;  #modify
+               redo;
+               }
+               
+          #continue - runs after every iteration
+          #continue {
+           # $i++;
+            #print" finish $i\n";
+            # }
+            
+ }
+ 
+ SKIP:
+  print"encountered something wrong in list\n";
+  
