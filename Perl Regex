@@ -1,0 +1,152 @@
+
+use warnings;
+use strict;
+
+# basic =~ match operator , avoid using == operator 
+my $text = "Perl is powerful";
+if( $text =~ /Perl/)                #forward slash is important 
+    {
+       print" Match found! \n";
+     }
+else {
+        print"No MATCH\n";
+     }
+print"---------------------------\n";
+
+# for case sensitove ise "i"
+if($text =~ /perl/i)
+   {
+      print "case sensitive : match found\n";
+   }   
+  
+print"---------------------------\n";
+
+# $' , $` , $& 
+ if($text =~ /powerful/)
+     {
+          print"before match: $` \n";  #return string 
+          print"after match: $' \n";   #return string
+          print"matched: $& \n";         #return string 
+          
+     }     
+  
+print"------------Substitution Matching--------------------\n";
+
+# substitution pattern
+my $line = "SKY IS BLUE";
+ 
+ $line =~ s/BLUE/CLEAR/;
+ print "$line \n";
+
+print"--------------Meta Charachters example--------------------\n";
+
+# capture digits
+
+my $num = "price 200 ";
+if( $num =~ /\d+/)
+        {
+         print "contain a number! \n";
+         }
+         
+
+
+
+my $str = "name: john Age: 35";
+if ($str =~ /name:\s(\w+)\s age: \s(\d+)/)
+          {
+             print"name: $1 , Age: $2\n";
+          }   
+else {
+         print" not found\n";
+      }   
+
+
+if( $str =~ /j.n/){                        
+          print"single charachter(.) matched\n ";    #j to n
+          }
+else {
+          print" single charachter(.) match not found\n";
+      }    
+          
+
+if($str =~ /^name/){        #matches only  if name is at beginning
+      print" start of string (^) match found\n";   
+      }
+             
+else {
+          print" start of string(^) match not found\n";
+      }     
+
+
+if($str =~ /\w+/){
+     print" matched more than 1 charachter (\w)\n";
+     }
+else {
+        print" match not found \w \n";
+     }
+
+if($str =~ /\s/) {
+     print"whitespace found\n";
+     }
+else {
+     print"white space is not found\n";
+     }
+     
+#combined example
+
+my $info = "john 25";
+if( $info =~ /^\w+\s\d+$/){  #complete pattern mathching
+    
+     print"Matched complete pattern of 'info' \n";
+     }
+else {
+      print" not matched 'info' \n";
+      }
+      
+print"---------------------Quantifiers example-------------\n";
+#how many times a pattern occur
+
+my $str2 = "abbbbbc";
+
+if($str2 =~ /ab*c/){             #ac, abc,abbc,abbbbc 0 or more times
+     print" (*) matched more than 1 \n";
+     }
+ else {
+     print" (*) Not matched\n";
+     }
+     
+      
+if($str2 =~ /ab+c/){             # abc,abbc,abbbbc   1 or more times
+     print" (+) matched more than 1 \n";    #doesn't match ac
+     }
+ else {
+     print" (+) Not matched\n";
+
+}
+
+if($str2 =~ /b{3}/){             
+     print" matched exactly 3 b's \n";
+     }
+ else {
+     print" Not exactly 3 b's matched\n";
+     }
+     
+     
+if($str2 =~ /b{2,}/){             #abc, abbc,abbbc, abbbbbc
+     print"  matched more than 2 b's \n";
+     }
+ else {  
+     print" Not matched more than 2 b's \n";
+     }     
+     
+my $str3 = "colour";
+     
+if($str3 =~ /colo?r/){             #colour , color
+     print" (?) matched  \n";
+     }
+ else {
+     print" (?) Not matched\n";
+     }
+ 
+ 
+ 
