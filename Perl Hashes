@@ -1,0 +1,38 @@
+use design;
+
+%data = (-name => rohan , -age => 34 , -salary => 500000);
+print"$data{-age}\n";     #hash elements are accessed by  -   $hashvariable{}
+
+
+#....................................1. slicing or extracting ......................
+
+@list = @data{-age , -salary};       #define array 
+print"array = @list\n";
+
+#..................................2.  extracting keys  - keys func............................
+@keys = keys%data;
+print"$keys[0]\n";         #return array 
+print"@keys\n";
+#size?
+$size = @keys;
+print"size of keys in data = $size\n";
+
+#.................................... 3. extracting values - values fun
+@values = values %data;
+print"@values\n";
+
+#.................................... 4. checking existence - exists func..................
+if (exists($data{-age})){
+        print"found\n";
+ }
+else {
+     print"may be";
+}
+
+#.............................. 5 . ADDing and deleting element in HASHES..................................
+
+$data{'experience'} = 3;
+print"$data{'experience'}\n";    #accessing the key it will print value
+@keys = keys %data;
+$size = @keys;
+print"size of keys is updated = $size\n";
