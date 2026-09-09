@@ -1,0 +1,106 @@
+use design;
+
+#..........................................scalar varaibles................................. 
+
+$name = "prerna";
+$x = 56;
+$y = 45.90;
+print"name: $name\n";
+print"$x\n";
+print"$y\n";
+
+$octal = 0377;       #0377 is octal -> decimal would be printing 
+$hex = 0xFE;         #254
+$integer = 24;
+$negative = -90;
+print"integer = $integer\n";
+print"octal = $octal\n";
+print"hex = $hex\n";
+print"negative no = $negative\n";
+
+$info = "passing year 2026";
+$info1 = " \uelectrical engineering - $info ";
+$info2 = 'college id - \Uu22ee030';          #print as it is 
+
+print"$info\n";
+print"$info1\n";
+print"$info2\n";
+
+
+$multilinestring = " good morning!
+                         let's have a breakfast";
+                                               
+print"$multilinestring\n";
+
+
+$str1 = " hyy john , \"goodlooking\" ";       #escape charachters are used
+print"$str1\n";
+
+
+#Construct strings from ASCII values.  - V strings (string literal)
+$str = v72.101.108.108.111;        # sequence of numbers represent ASCII charachter values
+print"$str\n";
+
+#special literals
+print " file name : ".__FILE__." \n";
+print "Line Number " . __LINE__ ."\n";
+print "Package " . __PACKAGE__ ."\n";
+
+
+
+
+#..................................ARRAYS variable.......................................
+
+@arr = (34 , 45 , 2003);
+print "\$arr[0] = $arr[0]\n"; #used escape charachter \ and dollar sign to   access the element
+print"array 2 element = $arr[1]\n";
+
+
+@arr2 = ('a' , 'b' , 76 ,34 ,-2 ,'z');
+
+print "$arr2[-1]\n";      #last element
+print "$arr2[3]\n";
+#changing the value 
+$arr2[2] = 'x';    #76-> x
+print"\$arr2[2] = $arr2[2]\n";
+
+
+
+# array declaration populated using either parentheses() or the qw operator.
+
+@arr3 = qw/ this is scripting language/; 
+#qw// operator (short for "quote words") is a convenient way to create a list of strings without using quotes and commas.
+
+#each word reperesents element
+print"$arr3[2] , $arr3[3]\n";
+
+
+## Prints number from 1 to 10
+@num = (1..10);                #using double dot -> called as range operator
+print"@num\n";    #dont use $ symbol here to print complete array
+
+
+#array in perl are mutable
+@fruits = ("mango" , 'apple ' , "kiwi" , 'orange' );
+
+#push to add element in the end
+push( @fruits , "beet");
+print"@fruits\n";
+
+#unshift to add element in the begining
+unshift(@fruits , "guava");
+print"@fruits\n";
+
+#shift to add remove element from beginning
+shift( @fruits );
+print"@fruits\n";
+
+#pop to remove last element
+pop(@fruits);
+print"@fruits\n";
+
+#slicing
+print"@fruits[0,3,4]\n";
+print"@fruits[0..2]\n";     #using range operator for speed 
+
+@fav = @fruits[0,1,3];   #creating another array through slicing
