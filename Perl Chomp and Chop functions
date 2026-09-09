@@ -1,0 +1,23 @@
+use design;
+
+use warnings;
+use strict;
+
+my $str = "hello";
+my $last_char = chop($str);
+print"$str\n";
+print"$last_char\n";
+
+
+my $str2 = "hyy\n";
+chomp($str2);
+print"$str2\n";
+
+
+my @arr = ("apple", "mango","orange");
+chop(@arr);  #remove last charachter from all elements
+print"@arr\n";
+
+my %hash = (-name => "rohan" , -age=> 45 );
+chop(%hash);
+print"%hash\n";
