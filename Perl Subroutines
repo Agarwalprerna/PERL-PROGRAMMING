@@ -1,0 +1,50 @@
+use design;
+
+sub average{
+ 
+     $num = scalar(@_) ;    # no. of arguments are accessed using @_
+     $sum =0;
+     
+     foreach $i(@_){
+         $sum += $i;
+         }
+         $avg = $sum/$num;
+         
+         
+    print"average os numbers = $avg\n";   #or return $avg;
+ }
+ 
+ #function call
+ average(10 ,30,89,40);
+ 
+ 
+ #....passing array or list as an argument 
+ 
+ sub square{
+  
+  my @num = @_;
+  $sum2=0;
+  
+  foreach $i(@_){
+      $sum2 += $i*$i;
+      }
+   print"sum of square of numbers= $sum2 \n";
+   
+}
+#func call
+square(1,2,3,4,5);
+
+#.................. passing hashes as a argument
+sub Printhash{
+
+my %hash = @_;
+
+  foreach $i(keys %hash){
+       $value = $hash{$i};
+       print" $i = $value\n";
+   }
+}
+
+%hash= ('name' => 'john' , 'age' =>20);
+
+Printhash(%hash);
