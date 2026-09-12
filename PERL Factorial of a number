@@ -1,0 +1,48 @@
+use design;
+
+use strict;
+use warnings;
+
+#for loop
+
+my $num = 6;
+my $fact = 1;
+
+foreach(1..$num){
+      $fact = $fact * $_ ;
+      }
+print"factorial of $num = $fact\n";
+
+
+#while loop
+
+my $j = 1;
+
+while ($j <= $num){
+      $fact = $j* $fact;
+      $j ++ ;
+      
+      }
+
+
+#recursion
+
+sub factorial{
+
+       my $i = $_[0];
+       
+       if ($i <0){
+            return "factorial is not defined";
+       }
+       elsif( $i==0 || $i ==1){
+            return 1;
+       }
+       else{
+            return $i*factorial($i-1);
+            }
+}
+
+my $n = 3;
+my $output = factorial($n);
+print"factorial of $n = $output\n";
+
