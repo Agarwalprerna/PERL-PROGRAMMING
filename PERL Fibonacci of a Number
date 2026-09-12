@@ -1,0 +1,42 @@
+
+##################################################################################1. for loop
+my $number = 4;
+my $n1 = 0;
+my $n2 = 1;
+
+
+print "$n1\n";
+print "$n2\n";
+
+for( my $k=2; $k < $number ; $k++){
+         my $n3 = $n1 + $n2;
+         print "$n3\n";
+         $n1 = $n2;
+         $n2 = $n3;
+}         
+         
+
+####################################################################################2. function 
+sub fibonacci{
+
+        my $N = $_[0];
+        
+        if ($N <0){
+                 return "fibonacci is not defined";
+        }
+        elsif ($N==0){
+                 return 0;
+        }
+        elsif( $N == 1){
+                 return 1;
+        }
+        else{
+                 return fibonacci($N-1) + fibonacci($N-2);
+        }
+}
+my $r = 4;
+my $fib_res = fibonacci($r);
+print"fibonacci of $r = $fib_res\n";
+        
+
+       
